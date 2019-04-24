@@ -281,7 +281,9 @@ class SAR_Generator {
 
 
 	protected function substitute_post_link( $post ) {
-		unset( $post->filter );
+//	    if ( property_exists( $post, 'filter' ) ) {
+//            unset( $post->filter );
+//        }
 
 		return html_link(
 			get_permalink( $post ),
@@ -337,5 +339,6 @@ class SAR_Generator {
 	}
 }
 
-add_filter( 'posts_clauses', array( 'SAR_Generator', 'query_manipulation' ), 10, 2 );
+$sar_generator = new SAR_Generator();
+add_filter( 'posts_clauses', array( $sar_generator, 'query_manipulation' ), 10, 2 );
 

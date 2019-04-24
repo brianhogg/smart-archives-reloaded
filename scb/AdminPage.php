@@ -126,7 +126,7 @@ abstract class scbAdminPage {
 	// A generic page header
 	function page_header() {
 		echo "<div class='wrap'>\n";
-		screen_icon( $this->args['screen_icon'] );
+		//screen_icon( $this->args['screen_icon'] );
 		echo html( "h2", $this->args['page_title'] );
 	}
 
@@ -139,7 +139,7 @@ abstract class scbAdminPage {
 	}
 
 	// This is where the form data should be validated
-	function validate( $new_data, $old_data ) {
+	function validate( $new_data ) {
 		return $new_data;
 	}
 

@@ -94,7 +94,7 @@ class SAR_Core {
 		return $generator->generate( $args, $qv );
 	}
 
-	function validate_args( $args ) {
+	static function validate_args( $args ) {
 		$args = wp_parse_args( $args, self::$options->get_defaults() );
 
 		// Category IDs
